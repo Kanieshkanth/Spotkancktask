@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Spotkanck Task</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
+ 
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">
+        <img src="logo.png" width="15%">
+        <i class="fa fa-bell-o" style="float: right; padding-top: 10px;"></i>
+      </div>
+      <div class="list-group list-group-flush bg-light">
+        <a href="#" class="list-group-item list-group-item-action "><center><img src="profile.png" style="border-radius:50%; width: 50%; height: 50%;"></center></a>
+        <div class="list-group-item intro">Hello <b>Kanieshkanth</b> !<br/>Your Plan : <span><b>Free&nbsp;</b><i class="fa fa-edit"></i></span></div>
+        <a href="#" class="list-group-item"><center><button class="bt1">Create new meal  +</button></center></a>
+        <label class="lf1">Menu</label>
+        <a href="#" class="list-group-item list-group-item-action bg-light lf2"><i class="fa fa-database"></i>&nbsp;Overview</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light lf2"><i class="fa fa-cutlery"></i>&nbsp;Meals</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light lf2"><i class="fa fa-exchange"></i>&nbsp;Order History</a>
+        <label class="lf1">Community</label>
+        <a href="#" class="list-group-item list-group-item-action bg-light lf2"><i class="fa fa-pencil"></i>&nbsp;Reviews</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light lf2"><i class="fa fa-group"></i>&nbsp;User Recipies</a><br/>
+        <a href="#" class="list-group-item list-group-item-action bg-light lf2"><i class="fa fa-power-off"></i>&nbsp;Logout</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+        <div class="collapse navbar-collapse">
+            <input type="text" placeholder="&nbsp;Search" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                &nbsp;&nbsp;<label>Meat</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>                 
+            </li>
+            <li class="nav-item">
+                &nbsp;&nbsp;<label>Vegan</label>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+            </li>
+            <li class="nav-item">
+                &nbsp;&nbsp;<label>Gluten free</label>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid row">
+        <div class="left" id="left">
+            <div class="lef">
+            <div class="l1">
+            <h1>Today's Options</h1>
+            </div>
+            <div class="l2">
+            <button id="b1">Compare Meals</button>
+            <button id="b2">Filter&nbsp;<i class="fa fa-filter"></i></button>
+            <button id="b2"><i class="fa fa-bars"></i></button>
+            </div>
+            </div>
+            <h4>Drag & Drop to your meal list&nbsp;<i class="fa fa-exclamation-circle"></i></h4>
+            <div class="topnav">
+                <a href="#">All Cuisines</a>
+                <a href="#">Italian</a>
+                <a href="#">Indian</a>
+                <a href="#">Greek</a>
+                <a href="#">Thai</a>
+                <a href="#">Chinese</a>
+                <a style="float: right;" href="#">Sortby : &nbsp;<select id="sort" name="sort">
+                    <option value="Price">Price</option>
+                    <option value="Rating">Rating</option>
+                    <option value="Popular">Popular</option>
+                  </select></a>
+            </div><hr>
+
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"><center><label><h4>List of Meals</h4><br/>
+                
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag1">
+                    <h4>Idli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>20/Set</style></h4> 
+                </div>
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag2">
+                    <h4>Dhosa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>20/Piece</style></h4> 
+                </div>
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag3">
+                    <h4>Rice Meals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>100</style></h4> 
+                </div>
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag4">
+                    <h4>Poori&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>50/Set</style></h4> 
+                </div>
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag5">
+                    <h4>Chapathi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>40/Set</style></h4> 
+                </div>
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag6">
+                    <h4>Parotta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>40/Set</style></h4> 
+                </div>
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag7">
+                    <h4>Venpongal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>50</style></h4> 
+                </div>
+                <div class="drg" draggable="true" ondragstart="drag(event)" id="drag8">
+                    <h4>Minimeals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-inr"></i>70</style></h4> 
+                </div>
+
+            </label></center>
+            </div>
+
+
+        </div>
+        <div class="right" id="right">
+            <h3>Create your meal plan</h3><h5>for 26 Mar 2020&nbsp;<i class="fa fa-calendar"></i></h5><hr>
+            <label>Drop to Add / Drag to Delete</label>
+            <div class="ls">
+            <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <label>Breakfast</label>
+            </div><hr>
+
+            <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <label>Lunch</label>
+            </div><hr>
+
+            <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <label>Dinner</label>
+            </div><hr>
+            </div>
+            <center>
+            <div class="btm">
+            <button class="bt2">Save Meals and Pay</button>
+            </div></center>
+        </div>
+    </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
